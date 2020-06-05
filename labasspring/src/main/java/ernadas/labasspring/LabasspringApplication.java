@@ -12,9 +12,9 @@ public class LabasspringApplication {
 				
 		SpringApplication.run(LabasspringApplication.class, args);
 		 
-		System.out.println( "Labas Spring" );
-		SkaiciausIvedimas skaicius = new SkaiciausIvedimas ();
-		skaicius.Ivedimas();
+		// System.out.println( "Labas Spring" );
+		// SkaiciausIvedimas skaicius = new SkaiciausIvedimas ();
+		// skaicius.Ivedimas();
 		
 		/**
 		 * kaip atrodo  be beans'u
@@ -23,11 +23,40 @@ public class LabasspringApplication {
 		
 		SkaiciuKeitimoVykdymas sk_keit_run = new SkaiciuKeitimoVykdymas ( sk_dest_dvej );
 		*/
+		String[] keitimai = { "sk_dest_dvej", "sk_dest_ses", "sk_niekaip" };
+		String keitimas = "";
+		
+		MeniuIsKlaviaturos meniu = new MeniuIsKlaviaturos();
+		
+		Integer num_meniu_item = 0;
+		
+		try {
+		
+			num_meniu_item = Integer.parseInt( meniu.Ivedimas() );
+	
+			if ( num_meniu_item <= keitimai.length ) {
+				
+				keitimas = keitimai [ num_meniu_item - 1 ];
+			}
+		
+		} catch( Exception e ) {
+			
+			System.out.println ( "nieko nepasirinkote? :( .." );
+			
+		}
+	
 		ApplicationContext context = new ClassPathXmlApplicationContext( "file:src/beans.xml" );
 		SkaiciuKeitimoVykdymas sk_keit_run = (SkaiciuKeitimoVykdymas) context.getBean( "mainspring" );		
 		
-		sk_keit_run.Atlikti("349");
+		if ( ! keitimas.equals ( "" ) ) {
+			
+			sk_keit_run.setContext ( context );
+			sk_keit_run.setKeitimoUzduotis( keitimas );
+			sk_keit_run.Atlikti();
 		
-		System.out.println (sk_keit_run.getSkaiciuKeitimas().getSkaicius_y());
+			System.out.println (sk_keit_run.getSkaiciuKeitimas().getSkaicius_y());
+		}
+		System.out.println ( "ate :)" );
+
 	}
 }

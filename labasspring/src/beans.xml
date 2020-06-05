@@ -5,13 +5,19 @@
    xsi:schemaLocation = "http://www.springframework.org/schema/beans
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-   <bean id = "mainspring" class = "ernadas.labasspring.SkaiciuKeitimoVykdymas" scope = "singleton">
-		<constructor-arg index="0" ref = "sk_dest_ses"/>
+   <bean id="mainspring" class="ernadas.labasspring.SkaiciuKeitimoVykdymas" scope="singleton">
+		<!-- constructor-arg index="0" ref="sk_dest_ses" / -->
+		<constructor-arg index="0" ref="sk_skaitymas_is_klavos" />
 	</bean>
-   <bean id = "sk_dest_dvej" class = "ernadas.labasspring.SkaiciusKeitimasIsDesimtainesIDvejetaine" scope = "singleton">
+   <bean id="sk_dest_dvej" class="ernadas.labasspring.SkaiciusKeitimasIsDesimtainesIDvejetaine" scope="singleton">
    </bean> 
-   <bean id = "sk_dest_ses" class = "ernadas.labasspring.SkaiciausKeitimasIsDesimtaineISesioliktaine" scope = "singleton">
+   <bean id="sk_dest_ses" class="ernadas.labasspring.SkaiciausKeitimasIsDesimtaineISesioliktaine" scope="singleton">
    </bean>
-   <bean id = "sk_niekaip" class = "ernadas.labasspring.SkaiciuKeitimas" scope = "singleton">
-   </bean>  
+   <bean id="sk_niekaip" class="ernadas.labasspring.SkaiciuKeitimas" scope="singleton">
+   </bean> 
+   <bean id="sk_skaitymas_is_klavos" class ="ernadas.labasspring.SkaiciausIvedimasIsKlaviaturos" scope="singleton">
+   </bean>   
+   <bean id="sk_nurodymas" class ="ernadas.labasspring.SkaiciausIvedimas" scope="singleton">
+		<constructor-arg index="0" value="411"/>   
+   </bean>    
 </beans>

@@ -2,20 +2,21 @@ package ernadas.labasspring;
 
 import java.util.Scanner;
 
-public class SkaiciausIvedimas extends SkaiciuKeitimas {
+public class SkaiciausIvedimas {
+	
+	public String skaicius_ivestas;
 	
 	public SkaiciausIvedimas () {
 		
 	}
 	
-	public void Ivedimas () {
-		
-		int n;
-		Scanner nuskaityti = new Scanner (System.in);
-		System.out.println ("Iveskite skaiciu konvertavimui");
-		//n = nuskaityti.nextInt();
-		skaicius_is = Integer.toString (nuskaityti.nextInt());
-		
-	}
+	public SkaiciausIvedimas ( String skaicius_nurodytas) {
 
+		skaicius_ivestas = skaicius_nurodytas;
+	}	
+	
+	public String Ivedimas () {
+		
+		return skaicius_ivestas;
+	}
 }
