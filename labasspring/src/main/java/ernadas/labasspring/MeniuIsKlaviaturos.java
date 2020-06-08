@@ -13,8 +13,9 @@ public class MeniuIsKlaviaturos extends SkaiciausIvedimasIsKlaviaturos {
 		
 		System.out.println ( "0. Pabaiga" );
 		System.out.println ( "1. Iš Desimtainės į dvejetainę" );
-		System.out.println ( "2. Iš Desimtainės į šešioliktainę" );		
-		System.out.println ( "3. Palikti nekeistą" );	
+		System.out.println ( "2. Iš Desimtainės į šešioliktainę" );	
+		System.out.println ( "3. Iš dvejetainės į dešimtainę" );
+		System.out.println ( "4. Palikti nekeistą" );	
 		
 		meniu=super.Ivedimas();
 		

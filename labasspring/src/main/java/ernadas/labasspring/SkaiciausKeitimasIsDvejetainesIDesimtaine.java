@@ -10,7 +10,7 @@ public class SkaiciausKeitimasIsDvejetainesIDesimtaine extends SkaiciuKeitimas {
 	public void Keisti () {
 		
 		int skaicius = Integer.parseInt(skaicius_is);
-	    long rasti_skaiciai = 0;
+	    int rasti_skaiciai = 0;
 		long skaiciai = 0;
 	    int daliklis = 10;
 		int kiekis = 0;
@@ -21,7 +21,7 @@ public class SkaiciausKeitimasIsDvejetainesIDesimtaine extends SkaiciuKeitimas {
 			
 				if( skaiciai == 0 || skaiciai == 1){
 					
-					rasti_skaiciai = (long) (rasti_skaiciai + skaiciai * Math.pow(2, kiekis));
+					rasti_skaiciai = (int) (rasti_skaiciai + skaiciai * Math.pow(2, kiekis));
 					skaicius  = skaicius / daliklis;
 				
 				} else {
@@ -32,6 +32,6 @@ public class SkaiciausKeitimasIsDvejetainesIDesimtaine extends SkaiciuKeitimas {
 
 				kiekis++;
 			}
-			skaicius_y = rasti_skaiciai;
+			skaicius_y = Integer.toString( rasti_skaiciai );
 	}
 }
