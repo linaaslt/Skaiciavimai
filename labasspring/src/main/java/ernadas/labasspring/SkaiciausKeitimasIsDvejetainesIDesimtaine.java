@@ -15,7 +15,7 @@ public class SkaiciausKeitimasIsDvejetainesIDesimtaine extends SkaiciuKeitimas {
 	    int daliklis = 10;
 		int kiekis = 0;
 	 
-			while( skaicius > 0){
+			while ( skaicius > 0) {
 			
 				skaiciai = skaicius % daliklis;
 			

@@ -17,16 +17,58 @@ public class PageController {
 			, Model model ) {
 		
 		String message="keitimas neatliktas";
+		SkaiciuKeitimas sk_keit;
+		boolean keitimas_atliktas = false;
 		
 		if ( keisti.equals( "keisk" ) ) {
 			
-			message="keitimas atliktas";
+			message = "<br>atliekamas keitimo parinkimas<br>"; 
+			
+			if ( keitimas.equals( LstKeitimai.DEST_DVEJ.trump() ) ) {
+				
+				message += "parinktas keitimas<br>" + sk_is + " " + LstKeitimai.DEST_DVEJ.keitimas() + "<br>";
+				sk_keit = new SkaiciusKeitimasIsDesimtainesIDvejetaine();
+				sk_keit.setSkaicius_is(sk_is);
+				sk_keit.Keisti();
+				message += "rezultatas: " + sk_keit.getSkaicius_y() + "<br>";
+				keitimas_atliktas = true;
+			}
+			
+			if ( keitimas.equals( LstKeitimai.DEST_SES.trump() ) ) {
+			
+				message += "parinktas keitimas<br>" + sk_is + " " + LstKeitimai.DEST_SES.keitimas() + "<br>";
+				sk_keit = new SkaiciausKeitimasIsDesimtaineISesioliktaine();
+				sk_keit.setSkaicius_is(sk_is);
+				sk_keit.Keisti();
+				message += "rezultatas: " + sk_keit.getSkaicius_y() + "<br>";
+				keitimas_atliktas = true;
+			}
+			
+			if ( keitimas.equals( LstKeitimai.DVEJ_DEST.trump() ) ) {
+				
+				message += "parinktas keitimas<br>" + sk_is + " " + LstKeitimai.DVEJ_DEST.keitimas() + "<br>";
+				sk_keit = new SkaiciausKeitimasIsDvejetainesIDesimtaine();
+				sk_keit.setSkaicius_is(sk_is);
+				sk_keit.Keisti();
+				message += "rezultatas: " + sk_keit.getSkaicius_y() + "<br>";
+				keitimas_atliktas = true;
+			}
+			
+			if ( ( ! keitimas_atliktas ) || keitimas.equals( LstKeitimai.NIEKAIP.trump() ) ) {
+				
+				message += "parinktas keitimas<br>" + sk_is + " " + LstKeitimai.NIEKAIP.keitimas() + "<br>";
+				sk_keit = new SkaiciuKeitimas();
+				sk_keit.setSkaicius_is(sk_is);
+				sk_keit.Keisti();
+				message += "rezultatas: " + sk_keit.getSkaicius_y() + "<br>";
+			}			
+			
+			message += "keitimas atliktas";
 		}
     	
         model.addAttribute("lst_keitimai", LstKeitimai.values() ); 
         model.addAttribute("message",message);
     	return "index";
-    	
     }
  /*   
     @RequestMapping("/error")

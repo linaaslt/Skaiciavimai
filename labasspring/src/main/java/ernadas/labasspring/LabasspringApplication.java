@@ -22,10 +22,10 @@ public class LabasspringApplication {
 		SkaiciusKeitimasIsDesimtainesIDvejetaine sk_dest_dvej = new SkaiciusKeitimasIsDesimtainesIDvejetaine();
 		
 		SkaiciuKeitimoVykdymas sk_keit_run = new SkaiciuKeitimoVykdymas ( sk_dest_dvej );
-		*
-		String[] keitimai = { "sk_dest_dvej", "sk_dest_ses","sk_dvej_desimt", "sk_niekaip" };
-		String keitimas = "";
-		
+		*/
+		// String[] keitimai = { "sk_dest_dvej", "sk_dest_ses","sk_dvej_desimt", "sk_niekaip" };
+		// String keitimas = "";
+/*		
 		MeniuIsKlaviaturos meniu = new MeniuIsKlaviaturos();
 		
 		Integer num_meniu_item = 0;
@@ -44,7 +44,7 @@ public class LabasspringApplication {
 			System.out.println ( "nieko nepasirinkote? :( .." );
 			
 		}
-	
+
 		ApplicationContext context = new ClassPathXmlApplicationContext( "file:src/beans.xml" );
 		SkaiciuKeitimoVykdymas sk_keit_run = (SkaiciuKeitimoVykdymas) context.getBean( "mainspring" );		
 		
@@ -57,6 +57,6 @@ public class LabasspringApplication {
 			System.out.println (sk_keit_run.getSkaiciuKeitimas().getSkaicius_y());
 		}
 		System.out.println ( "ate :)" );
-		*/
+	*/	
 	}
 }
