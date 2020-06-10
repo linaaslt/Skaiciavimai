@@ -54,6 +54,36 @@ public class PageController {
 				keitimas_atliktas = true;
 			}
 			
+			if ( keitimas.equals( LstKeitimai.DVEJ_SES.trump() ) ) {
+				
+				message += "parinktas keitimas<br>" + sk_is + " " + LstKeitimai.DVEJ_SES.keitimas() + "<br>";
+				sk_keit = new SkaiciausKeitimasIsDvejetainesISesioliktaine();
+				sk_keit.setSkaicius_is(sk_is);
+				sk_keit.Keisti();
+				message += "rezultatas: " + sk_keit.getSkaicius_y() + "<br>";
+				keitimas_atliktas = true;
+			}
+			
+			if ( keitimas.equals( LstKeitimai.SES_DVEJ.trump() ) ) {
+				
+				message += "parinktas keitimas<br>" + sk_is + " " + LstKeitimai.SES_DVEJ.keitimas() + "<br>";
+				sk_keit = new SkaiciausKeitimasIsSesioliktainesIDvejetaine();
+				sk_keit.setSkaicius_is(sk_is);
+				sk_keit.Keisti();
+				message += "rezultatas: " + sk_keit.getSkaicius_y() + "<br>";
+				keitimas_atliktas = true;
+			}
+			
+			if ( keitimas.equals( LstKeitimai.SES_DEST.trump() ) ) {
+				
+				message += "parinktas keitimas<br>" + sk_is + " " + LstKeitimai.SES_DEST.keitimas() + "<br>";
+				sk_keit = new SkaiciausKeitimasIsSesioliktainesIDesimtaine();
+				sk_keit.setSkaicius_is(sk_is);
+				sk_keit.Keisti();
+				message += "rezultatas: " + sk_keit.getSkaicius_y() + "<br>";
+				keitimas_atliktas = true;
+			}
+			
 			if ( ( ! keitimas_atliktas ) || keitimas.equals( LstKeitimai.NIEKAIP.trump() ) ) {
 				
 				message += "parinktas keitimas<br>" + sk_is + " " + LstKeitimai.NIEKAIP.keitimas() + "<br>";
