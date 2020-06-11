@@ -6,6 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestParam;
 // import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 @Controller
 public class PageController {
@@ -24,75 +26,22 @@ public class PageController {
 			
 			message = "<br>atliekamas keitimo parinkimas<br>"; 
 			
-			if ( keitimas.equals( LstKeitimai.DEST_DVEJ.trump() ) ) {
+			ApplicationContext context = new ClassPathXmlApplicationContext( "file:src/beans.xml" );
+			
+			for ( LstKeitimai lk : LstKeitimai.values() ) {
 				
-				message += "parinktas keitimas<br>" + sk_is + " <br> " + LstKeitimai.DEST_DVEJ.keitimas() + "<br>";
-				sk_keit = new SkaiciusKeitimasIsDesimtainesIDvejetaine();
-				sk_keit.setSkaicius_is(sk_is);
-				sk_keit.Keisti();
-				message += "rezultatas: " + sk_keit.getSkaicius_y() + "<br>";
-				keitimas_atliktas = true;
+				if ( keitimas.equals( lk.trump() ) ) {
+					
+					message += "Įvestas skaičius konvertavimui<br>" + sk_is + " <br> " + lk.keitimas() + "<br>";
+					sk_keit = (SkaiciuKeitimas) context.getBean( keitimas );
+					sk_keit.setSkaicius_is(sk_is);
+					sk_keit.Keisti();
+					message += "rezultatas: " + sk_keit.getSkaicius_y() + "<br>";
+					keitimas_atliktas = true;
+					break;
+				}				
 			}
-			
-			if ( keitimas.equals( LstKeitimai.DEST_SES.trump() ) ) {
-			
-				message += "parinktas keitimas<br>" + sk_is + " <br> " + LstKeitimai.DEST_SES.keitimas() + "<br>";
-				sk_keit = new SkaiciausKeitimasIsDesimtaineISesioliktaine();
-				sk_keit.setSkaicius_is(sk_is);
-				sk_keit.Keisti();
-				message += "rezultatas: " + sk_keit.getSkaicius_y() + "<br>";
-				keitimas_atliktas = true;
-			}
-			
-			if ( keitimas.equals( LstKeitimai.DVEJ_DEST.trump() ) ) {
-				
-				message += "parinktas keitimas<br>" + sk_is + " <br> " + LstKeitimai.DVEJ_DEST.keitimas() + "<br>";
-				sk_keit = new SkaiciausKeitimasIsDvejetainesIDesimtaine();
-				sk_keit.setSkaicius_is(sk_is);
-				sk_keit.Keisti();
-				message += "rezultatas: " + sk_keit.getSkaicius_y() + "<br>";
-				keitimas_atliktas = true;
-			}
-			
-			if ( keitimas.equals( LstKeitimai.DVEJ_SES.trump() ) ) {
-				
-				message += "parinktas keitimas<br>" + sk_is + " <br> " + LstKeitimai.DVEJ_SES.keitimas() + "<br>";
-				sk_keit = new SkaiciausKeitimasIsDvejetainesISesioliktaine();
-				sk_keit.setSkaicius_is(sk_is);
-				sk_keit.Keisti();
-				message += "rezultatas: " + sk_keit.getSkaicius_y() + "<br>";
-				keitimas_atliktas = true;
-			}
-			
-			if ( keitimas.equals( LstKeitimai.SES_DVEJ.trump() ) ) {
-				
-				message += "parinktas keitimas<br>" + sk_is + " <br> " + LstKeitimai.SES_DVEJ.keitimas() + "<br>";
-				sk_keit = new SkaiciausKeitimasIsSesioliktainesIDvejetaine();
-				sk_keit.setSkaicius_is(sk_is);
-				sk_keit.Keisti();
-				message += "rezultatas: " + sk_keit.getSkaicius_y() + "<br>";
-				keitimas_atliktas = true;
-			}
-			
-			if ( keitimas.equals( LstKeitimai.SES_DEST.trump() ) ) {
-				
-				message += "parinktas keitimas<br>" + sk_is + " <br> " + LstKeitimai.SES_DEST.keitimas() + "<br>";
-				sk_keit = new SkaiciausKeitimasIsSesioliktainesIDesimtaine();
-				sk_keit.setSkaicius_is(sk_is);
-				sk_keit.Keisti();
-				message += "rezultatas: " + sk_keit.getSkaicius_y() + "<br>";
-				keitimas_atliktas = true;
-			}
-			
-			if ( ( ! keitimas_atliktas ) || keitimas.equals( LstKeitimai.NIEKAIP.trump() ) ) {
-				
-				message += "parinktas keitimas<br>" + sk_is + " <br> " + LstKeitimai.NIEKAIP.keitimas() + "<br>";
-				sk_keit = new SkaiciuKeitimas();
-				sk_keit.setSkaicius_is(sk_is);
-				sk_keit.Keisti();
-				message += "rezultatas: " + sk_keit.getSkaicius_y() + "<br>";
-			}			
-			
+					
 			message += "keitimas atliktas";
 		}
     	

@@ -19,6 +19,12 @@
    </bean>  
    <bean id="sk_dvej_desimt" class ="ernadas.labasspring.SkaiciausKeitimasIsDvejetainesIDesimtaine" scope="singleton">
    </bean> 
+   <bean id="sk_dvej_ses" class ="ernadas.labasspring.SkaiciausKeitimasIsDvejetainesISesioliktaine" scope="singleton">
+   </bean> 
+   <bean id="sk_ses_dest" class ="ernadas.labasspring.SkaiciausKeitimasIsSesioliktainesIDesimtaine" scope="singleton">
+   </bean> 
+   <bean id="sk_ses_dvej" class ="ernadas.labasspring.SkaiciausKeitimasIsSesioliktainesIDvejetaine" scope="singleton">
+   </bean> 
    <bean id="sk_nurodymas" class ="ernadas.labasspring.SkaiciausIvedimas" scope="singleton">
 		<constructor-arg index="0" value="411"/>   
    </bean>    
