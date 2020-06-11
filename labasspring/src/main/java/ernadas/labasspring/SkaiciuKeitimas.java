@@ -3,7 +3,9 @@ package ernadas.labasspring;
 public class SkaiciuKeitimas {
 
 	public String skaicius_is;
-	public String skaicius_y;
+	public String skaicius_y = "---";
+	public String msg_error = "klaidos nėra";
+	public boolean flag_error = false;
 	
 	public SkaiciuKeitimas() {
 		super();
@@ -16,7 +18,10 @@ public class SkaiciuKeitimas {
 	
 	public void Keisti( ) {
 		
-		skaicius_y = skaicius_is;
+		if ( ! flag_error )  {
+		
+			skaicius_y = skaicius_is;
+		}
 	}
 	
 	public String getSkaicius_is() {
@@ -24,7 +29,18 @@ public class SkaiciuKeitimas {
 	}
 	
 	public void setSkaicius_is(String skaicius_is) {
-		this.skaicius_is = skaicius_is;
+		
+		this.skaicius_is = skaicius_is.trim();
+		this.checkSkaiciusIs();
+	}
+	
+	public void checkSkaiciusIs() {
+		
+		if ( this.skaicius_is.equals("") ) {
+			
+			msg_error = "neįvestas skaičius";
+			flag_error = true;			
+		}
 	}
 	
 	public String getSkaicius_y() {

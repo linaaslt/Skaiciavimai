@@ -10,6 +10,8 @@ public class SkaiciausKeitimasIsSesioliktainesIDvejetaine extends SkaiciuKeitima
 	
 	public void Keisti () {
 		
+		if ( ! flag_error )  {
+		
 		String skaicius = (skaicius_is);
 		String rastas_skaicius = new BigInteger(skaicius, 16).toString(2);
 		int skaiciavimas = rastas_skaicius.length();
@@ -22,5 +24,6 @@ public class SkaiciausKeitimasIsSesioliktainesIDvejetaine extends SkaiciuKeitima
 		 }
 		 
 		 skaicius_y =  rastas_skaicius;
+		}
 	}
 }

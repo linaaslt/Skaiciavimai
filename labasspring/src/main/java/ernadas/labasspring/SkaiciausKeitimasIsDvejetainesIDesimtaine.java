@@ -9,6 +9,8 @@ public class SkaiciausKeitimasIsDvejetainesIDesimtaine extends SkaiciuKeitimas {
 	
 	public void Keisti () {
 		
+		if ( ! flag_error )  {
+		
 		int skaicius = Integer.parseInt(skaicius_is);
 	    int rasti_skaiciai = 0;
 		long skaiciai = 0;
@@ -33,5 +35,6 @@ public class SkaiciausKeitimasIsDvejetainesIDesimtaine extends SkaiciuKeitimas {
 				kiekis++;
 			}
 			skaicius_y = Integer.toString( rasti_skaiciai );
+		}
 	}
 }

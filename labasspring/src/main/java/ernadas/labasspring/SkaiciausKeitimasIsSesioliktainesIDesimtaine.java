@@ -8,9 +8,12 @@ public class SkaiciausKeitimasIsSesioliktainesIDesimtaine extends SkaiciuKeitima
 	
 	public void Keisti () {
 		
+		if ( ! flag_error )  {
+		
 		String skaicius = skaicius_is;
 		int atsakymas = Integer.parseInt(skaicius,16);
 		
 		 skaicius_y =  Integer.toString(atsakymas);
+		}
 	}
 }

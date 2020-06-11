@@ -36,7 +36,15 @@ public class PageController {
 					sk_keit = (SkaiciuKeitimas) context.getBean( keitimas );
 					sk_keit.setSkaicius_is(sk_is);
 					sk_keit.Keisti();
-					message += "rezultatas: " + sk_keit.getSkaicius_y() + "<br>";
+					
+					if ( sk_keit.flag_error ) {
+						
+						message += "klaida: <span class=\"error\">" + sk_keit.msg_error + "</span><br>";
+						
+					} else {
+					
+						message += "rezultatas: " + sk_keit.getSkaicius_y() + "<br>";
+					}
 					keitimas_atliktas = true;
 					break;
 				}				

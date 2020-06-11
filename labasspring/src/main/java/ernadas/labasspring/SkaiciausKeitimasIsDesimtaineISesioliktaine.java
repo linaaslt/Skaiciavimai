@@ -1,6 +1,5 @@
 package ernadas.labasspring;
 
-import java.util.Scanner;
 
 public class SkaiciausKeitimasIsDesimtaineISesioliktaine extends SkaiciuKeitimas {
 	
@@ -8,7 +7,9 @@ public class SkaiciausKeitimasIsDesimtaineISesioliktaine extends SkaiciuKeitimas
 	}
 		
 	public void Keisti () {
-										
+		
+		if ( ! flag_error )  {	
+			
 			int skaicius = Integer.parseInt(skaicius_is);
 			String simboliai = "0123456789ABCDEF";	
 			String skaiciai = "";
@@ -23,7 +24,7 @@ public class SkaiciausKeitimasIsDesimtaineISesioliktaine extends SkaiciuKeitimas
 			}
 			
 			skaicius_y = skaiciai;
-		
+		}
 	}
 
 }
