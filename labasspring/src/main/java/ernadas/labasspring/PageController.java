@@ -26,7 +26,7 @@ public class PageController {
 			
 			if ( keitimas.equals( LstKeitimai.DEST_DVEJ.trump() ) ) {
 				
-				message += "parinktas keitimas<br>" + sk_is + " " + LstKeitimai.DEST_DVEJ.keitimas() + "<br>";
+				message += "parinktas keitimas<br>" + sk_is + " <br> " + LstKeitimai.DEST_DVEJ.keitimas() + "<br>";
 				sk_keit = new SkaiciusKeitimasIsDesimtainesIDvejetaine();
 				sk_keit.setSkaicius_is(sk_is);
 				sk_keit.Keisti();
@@ -36,7 +36,7 @@ public class PageController {
 			
 			if ( keitimas.equals( LstKeitimai.DEST_SES.trump() ) ) {
 			
-				message += "parinktas keitimas<br>" + sk_is + " " + LstKeitimai.DEST_SES.keitimas() + "<br>";
+				message += "parinktas keitimas<br>" + sk_is + " <br> " + LstKeitimai.DEST_SES.keitimas() + "<br>";
 				sk_keit = new SkaiciausKeitimasIsDesimtaineISesioliktaine();
 				sk_keit.setSkaicius_is(sk_is);
 				sk_keit.Keisti();
@@ -46,7 +46,7 @@ public class PageController {
 			
 			if ( keitimas.equals( LstKeitimai.DVEJ_DEST.trump() ) ) {
 				
-				message += "parinktas keitimas<br>" + sk_is + " " + LstKeitimai.DVEJ_DEST.keitimas() + "<br>";
+				message += "parinktas keitimas<br>" + sk_is + " <br> " + LstKeitimai.DVEJ_DEST.keitimas() + "<br>";
 				sk_keit = new SkaiciausKeitimasIsDvejetainesIDesimtaine();
 				sk_keit.setSkaicius_is(sk_is);
 				sk_keit.Keisti();
@@ -56,7 +56,7 @@ public class PageController {
 			
 			if ( keitimas.equals( LstKeitimai.DVEJ_SES.trump() ) ) {
 				
-				message += "parinktas keitimas<br>" + sk_is + " " + LstKeitimai.DVEJ_SES.keitimas() + "<br>";
+				message += "parinktas keitimas<br>" + sk_is + " <br> " + LstKeitimai.DVEJ_SES.keitimas() + "<br>";
 				sk_keit = new SkaiciausKeitimasIsDvejetainesISesioliktaine();
 				sk_keit.setSkaicius_is(sk_is);
 				sk_keit.Keisti();
@@ -66,7 +66,7 @@ public class PageController {
 			
 			if ( keitimas.equals( LstKeitimai.SES_DVEJ.trump() ) ) {
 				
-				message += "parinktas keitimas<br>" + sk_is + " " + LstKeitimai.SES_DVEJ.keitimas() + "<br>";
+				message += "parinktas keitimas<br>" + sk_is + " <br> " + LstKeitimai.SES_DVEJ.keitimas() + "<br>";
 				sk_keit = new SkaiciausKeitimasIsSesioliktainesIDvejetaine();
 				sk_keit.setSkaicius_is(sk_is);
 				sk_keit.Keisti();
@@ -76,7 +76,7 @@ public class PageController {
 			
 			if ( keitimas.equals( LstKeitimai.SES_DEST.trump() ) ) {
 				
-				message += "parinktas keitimas<br>" + sk_is + " " + LstKeitimai.SES_DEST.keitimas() + "<br>";
+				message += "parinktas keitimas<br>" + sk_is + " <br> " + LstKeitimai.SES_DEST.keitimas() + "<br>";
 				sk_keit = new SkaiciausKeitimasIsSesioliktainesIDesimtaine();
 				sk_keit.setSkaicius_is(sk_is);
 				sk_keit.Keisti();
@@ -86,7 +86,7 @@ public class PageController {
 			
 			if ( ( ! keitimas_atliktas ) || keitimas.equals( LstKeitimai.NIEKAIP.trump() ) ) {
 				
-				message += "parinktas keitimas<br>" + sk_is + " " + LstKeitimai.NIEKAIP.keitimas() + "<br>";
+				message += "parinktas keitimas<br>" + sk_is + " <br> " + LstKeitimai.NIEKAIP.keitimas() + "<br>";
 				sk_keit = new SkaiciuKeitimas();
 				sk_keit.setSkaicius_is(sk_is);
 				sk_keit.Keisti();
