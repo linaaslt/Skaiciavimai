@@ -11,6 +11,8 @@ public class SkaiciausKeitimasIsDvejetainesISesioliktaine extends SkaiciuKeitima
 	
 	public void Keisti () {
 		
+		if ( ! flag_error )  {
+		
 		int ivestas_skaicius = Integer.parseInt(skaicius_is);
         int kiekis = 0;
         long rasti_skaiciai = 0;
@@ -59,5 +61,6 @@ public class SkaiciausKeitimasIsDvejetainesISesioliktaine extends SkaiciuKeitima
         }
         
         skaicius_y =  atsakymas;
+		}
 	}
 }	

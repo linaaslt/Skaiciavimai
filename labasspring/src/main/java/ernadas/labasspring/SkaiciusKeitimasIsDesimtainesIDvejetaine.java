@@ -5,7 +5,10 @@ public class SkaiciusKeitimasIsDesimtainesIDvejetaine extends SkaiciuKeitimas {
 	public SkaiciusKeitimasIsDesimtainesIDvejetaine () {
 	}
 		
-	public void Keisti() { 	
+	public void Keisti() { 
+		
+		if ( ! flag_error )  {
+		
 		int skaicius = Integer.parseInt(skaicius_is);
 	    String dvejet_skaiciai = "";
 		int skaiciai = 0;
@@ -28,5 +31,5 @@ public class SkaiciusKeitimasIsDesimtainesIDvejetaine extends SkaiciuKeitimas {
 			skaicius_y = dvejet_skaiciai;
 
 		}
-	
+	}
 }
