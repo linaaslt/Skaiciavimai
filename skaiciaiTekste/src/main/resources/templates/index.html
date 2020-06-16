@@ -10,10 +10,18 @@
 	<p id="tekstas" th:utext="${txt_content}">
 	</p>
 	<form method="post" action="">
-	Imti šitą<br>	
+	Įveskite failo vardą<br>
+	<input type="text" name="pav_failo"><br>
+	Nuskaityti įvestą tekstą<br>	
 	<textarea name="content">
 	</textarea>
 	<input type="submit" value="Imk">
 	</form>
+	<div name="skaityt_direktorija">
+	<ul id="failai">
+		<li th:each="failas : ${failu_dir}"><a th:href="@{/(srv_failas=${failas})}" th:text="${failas}"></a></li>
+	</ul>
+	<a th:href="@{/}" th:text="kitkas"></a>
+	</div>
 <body>
 </html>
