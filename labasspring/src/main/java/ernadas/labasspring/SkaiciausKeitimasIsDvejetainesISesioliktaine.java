@@ -4,10 +4,17 @@ package ernadas.labasspring;
 public class SkaiciausKeitimasIsDvejetainesISesioliktaine extends SkaiciuKeitimas {
 	
 
-
 	public SkaiciausKeitimasIsDvejetainesISesioliktaine () {
 		
+		super();
+		
 	}
+	
+	public  String[] getChrsAlowed() {
+		
+		String[] chrs_alowedx = { "0", "1" };
+		return chrs_alowedx;
+	}	
 	
 	public void Keisti () {
 		

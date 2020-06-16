@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Skaičiai tekste</title>
+</head>
+<body>
+	Skaičių radimas tekste<br>
+	<span class="error" th:utext="${msg_error}"></span>
+	<p id="tekstas" th:utext="${txt_content}">
+	</p>
+	<form method="post" action="">
+	Imti šitą<br>	
+	<textarea name="content">
+	</textarea>
+	<input type="submit" value="Imk">
+	</form>
+<body>
+</html>

@@ -5,7 +5,15 @@ public class SkaiciausKeitimasIsDvejetainesIDesimtaine extends SkaiciuKeitimas {
 
 	public SkaiciausKeitimasIsDvejetainesIDesimtaine () {
 		
+		super();
+		
 	}
+	
+	public  String[] getChrsAlowed() {
+			
+			String[] chrs_alowedx = { "0", "1" };
+			return chrs_alowedx;
+		}		
 	
 	public void Keisti () {
 		
